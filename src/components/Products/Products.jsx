@@ -19,7 +19,7 @@ export default function Products() {
     return <div>Error</div>;
   }
 
-  console.log(data);
+  //console.log(data);
 
   return (
     <Container>
