@@ -19,7 +19,7 @@ export default function Products() {
     return <div>Error</div>;
   }
 
-  //console.log(data);
+console.log(data)
 
   return (
     <Container>
@@ -28,7 +28,7 @@ export default function Products() {
       
         
           <Col key={product.id}>
-            <Card className="h-100">
+            <Card className="h-100 shadow-sm">
               <Card.Img style={{width: "100%", height: "40vh", objectFit: "cover"}} variant="top" src={product.imageUrl} />
               <Card.Body>
                 <Card.Title>{product.title}</Card.Title>
