@@ -1,12 +1,13 @@
-import { default as ApiHook } from "../../api/Hook";
+//import { default as ApiHook } from "../../api/Hook";
 import { useParams } from "react-router-dom";
 import { Container, Button, Card, Image, Row, Col, Stack} from "react-bootstrap";
 import React, { useEffect, useState } from 'react';
 
-
 import {default as Reviews} from "../reviews/reviews";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 export default function Product() {
+  const {getProductQuantity, addProductQuantity, cartItems} = useShoppingCart();
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -40,9 +41,15 @@ export default function Product() {
     return <div>Error</div>;
   }
 
-  console.log(data);
-  const test = Reviews(data.reviews)
-
+ 
+  const test = Reviews(data.reviews);
+  
+  
+  const quantity = getProductQuantity(data.id)
+  
+  cartItems.map(item => ( 
+    console.log(item)
+  ))
 
   return (
     <Container>
@@ -76,14 +83,10 @@ export default function Product() {
             {test}
             </Card.Body>
           </Card>
-          
-            
-            <Stack gap={2} className="col-md-5 mx-auto mt-5">
-      <Button variant="outline-warning" size="lg">Add to Cart</Button>
-      
-    </Stack>
-            
-                    
+          <Stack gap={2} className="col-md-5 mx-auto mt-5">
+            <Button onClick={() => addProductQuantity(data.id)} variant="outline-warning" size="lg">Add to Cart</Button>
+            <p>{quantity}</p>
+          </Stack>
         </Col>
       </Row>
     </Container>

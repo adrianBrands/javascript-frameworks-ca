@@ -2,12 +2,13 @@ import { Routes, Route } from "react-router-dom";
 import { Home, Cart, Checkout } from "./pages";
 import { Navbar, Footer } from "./components";
 import { Product } from "./components";
+import { ShoppingCartProvider } from "./components/context/ShoppingCartContext";
 
 
 
 function App() {
   return (
-    <>
+    <ShoppingCartProvider>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}/>
@@ -16,7 +17,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
       <Footer/>
-    </>
+    </ShoppingCartProvider>
   )
 
   
