@@ -70,9 +70,9 @@ export default function Product() {
           <Card>
             <Card.Body>
               <Stack direction="horizontal" gap={3}>
-                <div><Card.Text>{data.price},-</Card.Text></div>
-                <div>{data.discountedPrice},-</div>
-                <div></div>
+                <div><Card.Text>{data.price === data.discountedPrice ? `${data.price},-` : null}</Card.Text></div>
+                <div className="text-decoration-line-through">{data.price !== data.discountedPrice ? `${data.price},-` : null}</div>
+                <div>{data.price !== data.discountedPrice ? data.discountedPrice : null}</div>
                 <div className="ms-auto">10%,-</div>
               </Stack>
             </Card.Body>
@@ -94,76 +94,3 @@ export default function Product() {
   );
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*export default function Product() {
-  let { id } = useParams();
-  const { data, isLoading, isError } = ApiHook(
-    `https://api.noroff.dev/api/v1/online-shop/${id}`);
-
-  if (isLoading) {
-    return <div>Loading</div>;
-  }
-
-  if (isError) {
-    return <div>Error</div>;
-  }
-
-
-  
-
- 
-
-  //const test = Reviews(data.reviews);
-  
-
-
-  return (
-    <Container>
-      <Row md={2} xs={1} lg={2}>
-        <Col className="lg-8">
-          <h1 className="fw-lighter">{data.title}</h1>
-          <Image className="shadow" src={data.imageUrl} alt="Description" width="100%" height="auto" rounded />
-        </Col>
-        <Col className="lg-3 mt-5">
-          <div>
-            <h2 className="border-bottom">Description:</h2>
-            <p className="fw-bold mt-3">{data.description}</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur ipsa, delectus corporis quas nihil esse consectetur reiciendis
-               architecto magnam eius error facere voluptatum doloremque ad minima repellendus ipsam, suscipit non?</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam ad consequuntur magni quis, illo sunt quod est aperiam unde eveniet
-               consequatur ex. Iusto sint totam accusamus harum, similique esse eum!</p>
-          </div>
-          <Card>
-            <Card.Body>
-              <Stack direction="horizontal" gap={3}>
-                <div><Card.Text>{data.price},-</Card.Text></div>
-                <div>{data.discountedPrice},-</div>
-                <div className="ms-auto"><Button variant="outline-warning" size="sm">Add to cart</Button></div>
-              </Stack>
-              <div>{test}</div>
-              </Card.Body>
-              
-          </Card>
-          
-        </Col>
-      </Row>
-    </Container>
-    
-  );
-
-  
-}*/

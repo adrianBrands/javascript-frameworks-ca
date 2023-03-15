@@ -12,7 +12,7 @@ import { default as ApiHook } from "../../api/Hook";
 
 
 export default function ShoppingCart() {
-  const { cartItems } = useShoppingCart();
+  const { cartItems, removeFromCart } = useShoppingCart();
   const { data, isLoading, isError } = ApiHook("https://api.noroff.dev/api/v1/online-shop",[]);
   
   if (isLoading) {
@@ -37,7 +37,7 @@ export default function ShoppingCart() {
           const product = data.find(i => i.id === cartItem.id)
           return total + (product?.discountedPrice || 0) * cartItem.quantity
         }, 0)},-</p>
-        <Button size="lg">checkout</Button>
+        <Link to={`/checkout`}><Button size="lg">checkout</Button></Link>
       </div>
   </Container>
   )

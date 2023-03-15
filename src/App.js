@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, Cart, Checkout } from "./pages";
+import { Home, Cart, Checkout, Contact } from "./pages";
 import { Navbar, Footer } from "./components";
 import { Product } from "./components";
 import { ShoppingCartProvider } from "./components/context/ShoppingCartContext";
@@ -15,6 +15,7 @@ function App() {
         <Route path="product/:id" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer/>
     </ShoppingCartProvider>

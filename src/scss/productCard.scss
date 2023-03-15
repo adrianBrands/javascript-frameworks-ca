@@ -1,0 +1,21 @@
+.productLink{
+  text-decoration: none;
+  color: #000;
+
+  &:hover {
+    color:#000;
+    
+  }
+}
+
+.productCard {
+
+  &:hover {
+    box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%) !important;
+    -webkit-transform: scale(1.04);
+    transform: scale(1.04);
+    transition: all 0.5s;
+  
+  }
+
+}

@@ -1,5 +1,5 @@
 
-$primary:#63911e;
+//$primary:#63911e;
 
 
 
@@ -9,6 +9,11 @@ $primary:#63911e;
 }
 
 
+
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 @import "./navbar.scss";
+@import "./productCard.scss";
+@import "./checkOut.scss";
+
