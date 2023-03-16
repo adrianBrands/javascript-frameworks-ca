@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Container, Form, Button, FloatingLabel, Col } from "react-bootstrap";
-
+import { useForm } from 'react-hook-form';
 
 export default function Contact(){
-  const [validated, setValidated] = useState(false);
+  const { register, handleSubmit } = useForm();
+  //const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (e) => {
+   /*const handleSubmit = (e) => {
     const form = e.currentTarget;
   
     if(form.checkValidity() === false){
@@ -15,17 +16,19 @@ export default function Contact(){
     setValidated(true)      
     e.preventDefault();
     
-  }
+  }*/
 
-  function onSubmit(data) {
+function onSubmit(data) {
     console.log(data);
   }
 
   return (
     <Container>
-      <Form noValidate validated={validated} onSubmit={handleSubmit}>
+      <Form noValidate  onSubmit={handleSubmit(onSubmit)}>
         <Form.Group controlId="validationCustom01">
-          <FloatingLabel controlId="floatingInputName" label="Full name" className="mb-3">
+          <FloatingLabel controlId="floatingInputName" label="Full name"  className="mb-3">
+          <input {...register('firstName')} />
+     
             <Form.Control required minLength="3" type="text" placeholder="full name"/>
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             <Form.Control.Feedback type="invalid">Please provide more then 3 characters</Form.Control.Feedback>
@@ -60,6 +63,36 @@ export default function Contact(){
     </Container>
   )
 }
+
+
+
+
+/*
+import { useForm } from 'react-hook-form';
+
+export default function Contact() {
+  const { register, handleSubmit } = useForm();
+
+  function onSubmit(data) {
+    console.log(data);
+  }
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register('firstName')} />
+      <input {...register('lastName')} />
+      <select {...register('role')}>
+        <option value="developer">Developer</option>
+        <option value="designer">Designer</option>
+        <option value="admin">Admin</option>
+        <option value="other">Other</option>
+      </select>
+      <input type="submit" />
+    </form>
+  );
+}
+
+*/
 
 
 
