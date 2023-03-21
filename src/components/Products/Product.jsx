@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Container, Button, Card, Image, Row, Col, Stack} from "react-bootstrap";
 import React, { useEffect, useState } from 'react';
 
-import {default as Reviews} from "../reviews/reviews";
+import {default as Reviews} from "../Reviews/Reviews";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 export default function Product() {
@@ -42,10 +42,8 @@ export default function Product() {
   }
 
  
-  const test = Reviews(data.reviews);
+  const ProductReviews = Reviews(data.reviews);
   
-  
-  const quantity = getProductQuantity(data.id)
   
   cartItems.map(item => ( 
     console.log(item)
@@ -71,21 +69,20 @@ export default function Product() {
             <Card.Body>
               <Stack direction="horizontal" gap={3}>
                 <div><Card.Text>{data.price === data.discountedPrice ? `${data.price},-` : null}</Card.Text></div>
-                <div className="text-decoration-line-through">{data.price !== data.discountedPrice ? `${data.price},-` : null}</div>
-                <div>{data.price !== data.discountedPrice ? data.discountedPrice : null}</div>
-                <div className="ms-auto">10%,-</div>
+                <div className="text-decoration-line-through text-muted">{data.price !== data.discountedPrice ? `${data.price},-` : null}</div>
+                <div className="text-success">{data.price !== data.discountedPrice ? data.discountedPrice : null}</div>
+                <div className="ms-auto text-success">{data.price !== data.discountedPrice ? `${Math.round(((data.price - data.discountedPrice) / data.price) * 100) }% ` : null}</div>
               </Stack>
             </Card.Body>
           </Card>
           <Card  className="mt-3">
           <Card.Header  className="text-center" as="h4">Reviews</Card.Header>
             <Card.Body>
-            {test}
+            {ProductReviews}
             </Card.Body>
           </Card>
           <Stack gap={2} className="col-md-5 mx-auto mt-5">
-            <Button onClick={() => addProductQuantity(data.id)} variant="outline-warning" size="lg">Add to Cart</Button>
-            <p>{quantity}</p>
+            <Button  onClick={() => addProductQuantity(data.id)} variant="outline-primary" size="lg">Add to Cart</Button>
           </Stack>
         </Col>
       </Row>

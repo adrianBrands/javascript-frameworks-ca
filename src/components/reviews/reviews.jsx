@@ -1,16 +1,13 @@
 import {  Container, Row, Col } from "react-bootstrap";
 
 export default function Reviews(data){
-  const testData = data;
+  const productData = data;
   
-  if (testData === "undefined"){
-
-  }
-  if (testData.length >= 1){
+  if (productData.length >= 1){
     //console.log(data.length)
     return (
     <div>
-        {testData.map((test) => (
+        {productData.map((test) => (
           <Container className="mt-3 border-bottom" key={test.id}>
             <Row>
               <Col sm={8}><cite title="Source Title">{test.description}</cite></Col>
