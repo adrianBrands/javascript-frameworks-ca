@@ -8,7 +8,7 @@ export function useShoppingCart() {
 
 
   export function ShoppingCartProvider({children}) {
-  const [cartItems, setCartItems ] = useState([])
+  const [cartItems, setCartItems ] = useState([]);
 
   
 
@@ -54,21 +54,22 @@ export function useShoppingCart() {
     })
   }
 
+  
+ 
+  
+
+
  
 
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity, 
     0
-   )
-
-
-
-
-
-  return (
-    <ShoppingCartContext.Provider value ={{getProductQuantity, addProductQuantity, decreaseProductQuantity, removeFromCart, cartQuantity, cartItems}}>
+  )
+   
+   return (
+    <ShoppingCartContext.Provider value ={{getProductQuantity, addProductQuantity, decreaseProductQuantity,
+      removeFromCart, cartQuantity, cartItems}}>
       {children}
-      
     </ShoppingCartContext.Provider>
     );
 }

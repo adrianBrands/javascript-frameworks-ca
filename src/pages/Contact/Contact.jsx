@@ -32,7 +32,7 @@ return (
         errors,
       }) => (
       
-      <Container>
+      <Container className="mt-5">
         <h1 className="border-bottom">Contact</h1>
         <Form className="mt-3" noValidate onSubmit={handleSubmit}>
           <Form.Group  controlId="validationFormik01">

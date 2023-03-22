@@ -28,9 +28,11 @@ export default function Products() {
     } else {
       return (<div>{filter.map((product) => ( 
         <ul key={product.id} className="list-group">
-        <button type="button" className="list-group-item list-group-item-action">
-          {product.title}
-        </button>
+        <Link className="productLink" to={`/product/${product.id}`}>
+        <Button className="rounded list-group-item list-group-item-action">{product.title}</Button>
+        </Link>
+          
+        
       </ul>
       ))}
       </div>) 
@@ -38,7 +40,7 @@ export default function Products() {
   }
 
   return (
-    <Container>
+    <Container className="mb-5">
       <Form className="" >
         <Form.Control
           type="search"

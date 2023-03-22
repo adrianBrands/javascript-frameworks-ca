@@ -4,9 +4,8 @@ import CartItem from "../CartItem/CartItem";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { default as ApiHook } from "../../api/Hook";
 
-
 export default function ShoppingCart() {
-  const { cartItems, removeFromCart } = useShoppingCart();
+  const { cartItems, removeFromCart, decreaseProductQuantity } = useShoppingCart();
   const { data, isLoading, isError } = ApiHook("https://api.noroff.dev/api/v1/online-shop",[]);
   
   if (isLoading) {
@@ -16,10 +15,14 @@ export default function ShoppingCart() {
   if (isError) {
     return <div>Error</div>;
   }
-  
-  
+
+ const id = cartItems.map(id => (id.id))
+ //const product = data.find(i => i.id === id)
+ console.log(id)
+ //console.log(data.map(id => (id.id)))
+ 
   return (
-  <Container>
+  <Container className="mt-5">
     <h1 className="border-bottom">Cart items</h1>
     {cartItems.map(item => (
     <CartItem key={item.id} {...item}/>
@@ -29,7 +32,7 @@ export default function ShoppingCart() {
         const product = data.find(i => i.id === cartItem.id)
         return Math.round(total + (product?.discountedPrice || 0) * cartItem.quantity)
         }, 0)},-</p>
-        <Link to={`/checkout`}><Button size="lg" variant="outline-primary">checkout</Button></Link>
+        <Link ><Button onClick={() => decreaseProductQuantity} size="lg" variant="outline-primary">checkout</Button></Link>
     </div>
   </Container>
   )

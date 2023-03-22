@@ -1,9 +1,10 @@
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+
 export default function Checkout(){
   return (
-    <Container>
+    <Container className="mt-5">
       <h1 className="border-bottom">Checkout</h1>
       <div className="d-flex flex-column justify-content-center align-items-center mt-5">
         <h2>Thank you for your purchase</h2>
