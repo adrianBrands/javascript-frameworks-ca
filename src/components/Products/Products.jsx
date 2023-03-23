@@ -27,15 +27,13 @@ export default function Products() {
       return null
     } else {
       return (<div>{filter.map((product) => ( 
-        <ul key={product.id} className="list-group">
-        <Link className="productLink" to={`/product/${product.id}`}>
-        <Button className="rounded list-group-item list-group-item-action">{product.title}</Button>
-        </Link>
-          
-        
-      </ul>
-      ))}
-      </div>) 
+                <ul key={product.id} className="list-group">
+                  <Link className="productLink" to={`/product/${product.id}`}>
+                  <Button className="rounded list-group-item list-group-item-action">{product.title}</Button>
+                  </Link>
+                </ul>
+              ))}
+              </div>) 
     }
   }
 

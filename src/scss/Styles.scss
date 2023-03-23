@@ -1,32 +1,14 @@
 $primary:#329fb5;
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-
-
-
 .btn-outline-primary:hover { 
-
-    
-    --bs-btn-hover-color: #fff;
-    
+  --bs-btn-hover-color: #fff;
 }
 
 .btn-primary{
   --bs-btn-color: #fff;
   --bs-btn-hover-color:#fff;
 }
-
-
-/*.searchForm{
-  border-color: #911e1e;
-}*/
-
-
-
-
-
-
-
 
 
 

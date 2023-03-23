@@ -4,7 +4,6 @@ export default function Reviews(data){
   const productData = data;
   
   if (productData.length >= 1){
-    //console.log(data.length)
     return (
     <div>
         {productData.map((test) => (

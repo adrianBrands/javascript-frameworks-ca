@@ -17,8 +17,6 @@ export default function CartItem({id, quantity}) {
   
   const product = data.find(i => i.id === id)
   if(product == null) return null
-
-  
   
   return (
   <Row className="mt-3 d-flex align-items-center">

@@ -7,7 +7,7 @@ import {default as Reviews} from "../Reviews/Reviews";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 export default function Product() {
-  const {getProductQuantity, addProductQuantity, cartItems} = useShoppingCart();
+  const {getProductQuantity, addProductQuantity} = useShoppingCart();
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -43,11 +43,6 @@ export default function Product() {
 
  
   const ProductReviews = Reviews(data.reviews);
-  
-  
-  cartItems.map(item => ( 
-    console.log(item)
-  ))
 
   return (
     <Container>
@@ -82,7 +77,7 @@ export default function Product() {
             </Card.Body>
           </Card>
           <Stack gap={2} className="col-md-5 mx-auto mt-5">
-            <Button  onClick={() => addProductQuantity(data.id)} variant="outline-primary" size="lg">Add to Cart</Button>
+            <Button className="mb-5"  onClick={() => addProductQuantity(data.id)} variant="outline-primary" size="lg">Add to Cart</Button>
           </Stack>
         </Col>
       </Row>

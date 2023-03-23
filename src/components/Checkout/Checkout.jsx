@@ -1,7 +1,6 @@
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-
 export default function Checkout(){
   return (
     <Container className="mt-5">

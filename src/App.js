@@ -4,8 +4,6 @@ import { Navbar, Footer } from "./components";
 import { Product } from "./components";
 import { ShoppingCartProvider } from "./components/context/ShoppingCartContext";
 
-
-
 function App() {
   return (
     <ShoppingCartProvider>
@@ -20,9 +18,6 @@ function App() {
       <Footer/>
     </ShoppingCartProvider>
   )
-
-  
- 
 }
 
 export default App;
