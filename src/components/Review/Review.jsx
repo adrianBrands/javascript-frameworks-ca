@@ -1,6 +1,6 @@
 import {  Container, Row, Col } from "react-bootstrap";
-//test tes test 
-export default function Reviews(data){
+
+export default function Review(data){
   const productData = data;
   
   if (productData.length >= 1){

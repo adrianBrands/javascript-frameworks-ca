@@ -2,8 +2,7 @@
 import { useParams } from "react-router-dom";
 import { Container, Button, Card, Image, Row, Col, Stack} from "react-bootstrap";
 import React, { useEffect, useState } from 'react';
-
-import {default as Reviews} from "../Reviews/Reviews";
+import {default as Review} from "../Review/Review";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 export default function Product() {
@@ -42,7 +41,7 @@ export default function Product() {
   }
 
  
-  const ProductReviews = Reviews(data.reviews);
+  const ProductReviews = Review(data.reviews);
 
   return (
     <Container>
