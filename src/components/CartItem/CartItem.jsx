@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Col, Container, Row, Stack } from "react-bootstrap";
+import { Button, Col, Row  } from "react-bootstrap";
 import { default as ApiHook } from "../../api/Hook";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 

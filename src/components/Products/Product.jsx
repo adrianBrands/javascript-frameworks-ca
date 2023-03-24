@@ -6,7 +6,7 @@ import {default as Review} from "../Review/Review";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 export default function Product() {
-  const {getProductQuantity, addProductQuantity} = useShoppingCart();
+  const { addProductQuantity} = useShoppingCart();
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
