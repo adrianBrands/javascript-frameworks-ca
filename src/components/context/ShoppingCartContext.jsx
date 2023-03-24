@@ -21,7 +21,7 @@ export function useShoppingCart() {
   function addProductQuantity(id)  {
     setCartItems(currItems => {
       if (currItems.find(item => item.id === id) == null) { 
-      return [...currItems, {id, quantity: 1 }]
+      return [...currItems, {id, quantity: 1}]
     } else {
       return currItems.map(item => {
         if (item.id === id) {

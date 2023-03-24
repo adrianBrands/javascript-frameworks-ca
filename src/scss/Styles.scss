@@ -10,6 +10,12 @@ $primary:#329fb5;
   --bs-btn-hover-color:#fff;
 }
 
+.eCom{
+  font-style: italic;
+  color: $primary;
+  font-size: 25px
+  
+}
 
 
 @import "./footer.scss";

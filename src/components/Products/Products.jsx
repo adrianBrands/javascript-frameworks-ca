@@ -66,7 +66,7 @@ export default function Products() {
                 <Card.Text>rating: {product.rating}</Card.Text>
               </Card.Body>
               <Card.Footer className="d-flex justify-content-center align-items-center bg-primary">
-              <Link className="productsLink" to={`/product/${product.id}`}>Buy now</Link>
+              <Card.Text className="productsLink" href={`/product/${product.id}`}>Buy now</Card.Text>
               </Card.Footer>
             </Card>
           </Link>
