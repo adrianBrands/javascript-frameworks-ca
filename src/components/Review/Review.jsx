@@ -12,7 +12,7 @@ export default function Review(data){
               <Col sm={8}><cite title="Source Title">{product.description}</cite></Col>
               <Col>{product.username}</Col>
               <Col>rating: {product.rating}</Col>
-              <Col ><Rating stars={product.rating}/></Col>
+              <Col><Rating stars={product.rating}/></Col>
             </Row>
           </Container>
         ))}
