@@ -45,7 +45,7 @@ export default function Product() {
 
   return (
     <Container>
-      <Row md={2} xs={1} lg={2}>
+      <Row md={1} xs={1} lg={2}>
         <Col className="lg-8">
           <h1 className="fw-lighter">{data.title}</h1>
           <Image className="shadow" src={data.imageUrl} alt="Description" width="100%" height="auto" rounded />

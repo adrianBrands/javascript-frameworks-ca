@@ -1,17 +1,18 @@
 import {  Container, Row, Col } from "react-bootstrap";
-
+import { Rating } from "../Rating/Rating";
 export default function Review(data){
   const productData = data;
   
   if (productData.length >= 1){
     return (
     <div>
-        {productData.map((test) => (
-          <Container className="mt-3 border-bottom" key={test.id}>
+        {productData.map((product) => (
+          <Container className="mt-3 border-bottom" key={product.id}>
             <Row>
-              <Col sm={8}><cite title="Source Title">{test.description}</cite></Col>
-              <Col>{test.username}</Col>
-              <Col>rating: {test.rating}</Col>
+              <Col sm={8}><cite title="Source Title">{product.description}</cite></Col>
+              <Col>{product.username}</Col>
+              <Col>rating: {product.rating}</Col>
+              <Col ><Rating stars={product.rating}/></Col>
             </Row>
           </Container>
         ))}

@@ -18,6 +18,18 @@ $primary:#329fb5;
 }
 
 
+.stars{
+  color: #f5eb3b;
+  font-size: 30px;
+  
+  
+}
+
+.rating{
+  margin-bottom: -5px;
+}
+
+
 @import "./footer.scss";
 @import "./navbar.scss";
 @import "./productCard.scss";

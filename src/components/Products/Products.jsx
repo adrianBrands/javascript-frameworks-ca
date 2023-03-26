@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Rating } from "../Rating/Rating"
 
 export default function Products() {
   const { data, isLoading, isError } = ApiHook("https://api.noroff.dev/api/v1/online-shop",[]);
@@ -37,6 +38,12 @@ export default function Products() {
     }
   }
 
+  
+
+
+
+  
+
   return (
     <Container className="mb-5">
       <Form className="" >
@@ -63,7 +70,12 @@ export default function Products() {
                 <Card.Text className="text-decoration-line-through text-muted">{product.price !== product.discountedPrice ? `before: ${product.price},-` : null}</Card.Text>
                 <Card.Text className="text-success">{product.price !== product.discountedPrice ? `${product.discountedPrice},-` : null}</Card.Text>
                 <Card.Text className="percentage text-success">{product.price !== product.discountedPrice ? `${Math.round(((product.price - product.discountedPrice) / product.price) * 100) }% ` : null}</Card.Text>
-                <Card.Text>rating: {product.rating}</Card.Text>
+                <div className="d-flex  align-items-center justify-content-between">
+                  <Card.Text className="rating">Rating: {product.rating} </Card.Text>
+                  <Rating stars={product.rating}/>
+                </div>
+                
+                
               </Card.Body>
               <Card.Footer className="d-flex justify-content-center align-items-center bg-primary">
               <Card.Text className="productsLink" href={`/product/${product.id}`}>Buy now</Card.Text>
