@@ -20,8 +20,8 @@ export default function CartItem({id, quantity}) {
   
   return (
   <Row className="mt-3 d-flex align-items-center">
-    <Col sm>
-      <img alt=""  src={product.imageUrl} style={{width: "300px", height: "150px", objectFit:"cover"}}/>
+    <Col className="cartImg" sm>
+      <img alt="product"  src={product.imageUrl} style={{width: "300px", height: "150px", objectFit:"cover"}}/>
     </Col>
     <Col sm>
       <p className="fw-bold">{product.title}</p>

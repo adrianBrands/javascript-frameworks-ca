@@ -13,7 +13,8 @@ $primary:#329fb5;
 .eCom{
   font-style: italic;
   color: $primary;
-  font-size: 25px
+  font-size: 25px;
+  padding-left: 0.5rem;
   
 }
 
@@ -34,6 +35,6 @@ $primary:#329fb5;
 @import "./navbar.scss";
 @import "./productCard.scss";
 @import "./checkout.scss";
-
+@import "./cartItem.scss";
 
 
