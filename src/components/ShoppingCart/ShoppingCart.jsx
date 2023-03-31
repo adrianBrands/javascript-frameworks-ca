@@ -16,7 +16,7 @@ export default function ShoppingCart() {
   }
 
   return (
-  <Container className="mt-5">
+  <Container className="mt-5 mb-5">
     <h1 className="border-bottom">Cart items</h1>
     {cartItems.map(item => (
     <CartItem key={item.id} {...item}/>
