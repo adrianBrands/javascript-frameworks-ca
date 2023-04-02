@@ -12,11 +12,11 @@ export default function Products() {
   const [search, setSearch ] = useState("");
  
   if (isLoading) {
-    return <div>Loading</div>;
+    return <div className="d-flex justify-content-center align-items-center">Loading...</div>;
   }
 
   if (isError) {
-    return <div>Error</div>;
+    return <div className="d-flex justify-content-center align-items-center">Error something is wrong</div>;
   }
   
   const handleSubmit = (e) => setSearch(e.target.value);
@@ -37,13 +37,7 @@ export default function Products() {
               </div>) 
     }
   }
-
   
-
-
-
-  
-
   return (
     <Container className="mb-5">
       <Form className="" >

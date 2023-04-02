@@ -8,11 +8,11 @@ export default function CartItem({id, quantity}) {
   const { data, isLoading, isError } = ApiHook("https://api.noroff.dev/api/v1/online-shop",[]);
   
   if (isLoading) {
-    return <div>Loading</div>;
+    return <div className="d-flex justify-content-center align-items-center">Loading...</div>;
   }
 
   if (isError) {
-    return <div>Error</div>;
+    return <div className="d-flex justify-content-center align-items-center">Error something is wrong</div>;
   }
   
   const product = data.find(i => i.id === id)
