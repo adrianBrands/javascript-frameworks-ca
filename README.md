@@ -14,6 +14,10 @@ My first React project, creating a simple E-commerce website
 - [Bootstrap](https://getbootstrap.com)
 - [Sass](https://sass-lang.com/)
 
+## Description
+
+[Live site](https://splendid-figolla-7a87af.netlify.app/)
+
 ## Getting Started
 
 ### Installing
